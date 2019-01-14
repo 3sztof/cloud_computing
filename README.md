@@ -31,9 +31,9 @@
     $ ssh -i <private-key-path>/my-key-pair.pem <ec2-user>@<ec2-node-public-dns-adress>
     ```
     Where:
-     - <private-key-path> is the directory on the local system containing the SSH private key generated when creating "Key Pairs" in the AWS EC2 console.
-     - <ec2-user> depends on the operating system running on the node (for Ubuntu linux, the login and password defaults to ubuntu:ubuntu)
-     - <ec2-node-public-dns-adress> is the public dns adress assigned to the node (look it up in the EC2 management console)
+     - private-key-path is the directory on the local system containing the SSH private key generated when creating "Key Pairs" in the AWS EC2 console.
+     - ec2-user depends on the operating system running on the node (for Ubuntu linux, the login and password defaults to ubuntu:ubuntu)
+     - ec2-node-public-dns-adress is the public dns adress assigned to the node (look it up in the EC2 management console)
  - Deployed some simple helloworld / pi approximation scripts on a single EC2 machine (under native python shipped with Ubuntu Linux).
  - Read the publication on UC Berkeley's Biostat statistical computing cluster software and made an attempt to deploy one at AWS using the instructions provided in the tutorial repository (see: Useful Resources section). The project was abandoned as too ambitious - I have no sufficient R language knowledge, it was decided to stick to Python.
  - Made serveral attepmts, wasting a lot of time in order to deploy a High Performance Computing (HPC) cloud (see the next section for details)
@@ -45,26 +45,26 @@
     HADOOP_CONF_DIR = ~/<my-local-configuration-files-directory>
     ```
     Where:
-     - <my-local-configuration-files-directory> is a path to a folder containing hadoop configuration files on my local Linux machine.
+     - my-local-configuration-files-directory is a path to a folder containing hadoop configuration files on my local Linux machine.
 - Created a SSH tunnel to the Apache Spark AWS cluster "master node" (one of the three EC2 machines that is in control of the "workers") using dynamic port forwarding as follows:
     ```sh
     $ ssh -i <private-key-path>/mykeypair.pem -D <port> -N hadoop@<spark-master-node-public-dns-adress>
     ```
     Where:
-     - <private-key-path> is the directory on the local system containing the SSH private key generated when creating "Key Pairs" in the AWS EC2 console.
-    - <port> a local machine's port used to create the SSH tunnel
-    - <spark-master-node-public-dns-adress> is the public dns adress assigned to the spark cluster's master node (it can be checked in the AWS EC2 management console - it should usually be in a different network than the worker nodes).
+     - private-key-path is the directory on the local system containing the SSH private key generated when creating "Key Pairs" in the AWS EC2 console.
+    - port a local machine's port used to create the SSH tunnel
+    - spark-master-node-public-dns-adress is the public dns adress assigned to the spark cluster's master node (it can be checked in the AWS EC2 management console - it should usually be in a different network than the worker nodes).
  - Deployed a sample job (PI number digits calculations based on Monte Carlo method) that I found online to the Apache Spark Cluster configured in the previous steps. The deployment is executed as follows (providing the spark library is present in local machine's PATH environment):
     ```sh
     $ spark-submit --class <class> --master <master> --deploy-mode <mode> --py-files <py-path> <script> <args>
     ```
     Where:
-     - <class> is the entry point of the application (main class)
-     - <master> is the adress URL of the Apache Spark cluster's master node (spark://<spark-master-node-public-dns-adress>)
-     - <deploy-mode> is set to either "cluster" or "client" depending on wheather the script should be started on the cluster's worker nodes or the local client.
-     - <py-files> is the search path for the python scripts and dependencies on the local machine (useful for complex python projects)
-     - <script> is the python scipt file (.py) to be executed
-     - <args> are the space-separated arguments that will be passed to the main method of the <script> specified in the previous step
+     - class is the entry point of the application (main class)
+     - master is the adress URL of the Apache Spark cluster's master node (spark://spark-master-node-public-dns-adress)
+     - deploy-mode is set to either "cluster" or "client" depending on wheather the script should be started on the cluster's worker nodes or the local client.
+     - py-files is the search path for the python scripts and dependencies on the local machine (useful for complex python projects)
+     - script is the python scipt file (.py) to be executed
+     - args are the space-separated arguments that will be passed to the main method of the script specified in the previous step
     
 
 
