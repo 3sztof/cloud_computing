@@ -17,7 +17,12 @@
 
 
 #### Steps taken
- - Blah blah blah
+ - Applied for the AWS Educate financing program to get 40$ cloud experiments financing
+ - Studied all of the resources provided by the lecturer in order to gain a basic theoretical knowledge about the vast possibilities of AWS (which gives us much more than just parallel computing)
+ - Made serveral attepmts, wasting a lot of time in order to deploy a High Performance Computing (HPC) cloud (see the next section for details)
+ - After failing to find any help regarding the HPC cloud deployment, a change of approach was needed - it was decided to go with the Apache Spark cloud environment deployed on three AWS EC2 (Amazon Web Services Elastic Coputer Cloud) machines: one "master" and two "worker" nodes.
+   
+   
     ```sh
     $ ssh
     ```
@@ -32,4 +37,4 @@
 
 #### Todo
  - Try again to configure HPC and deploy a Python application there.
- - Make a comparison between paralel computing on a single machine and a cluster of cores - the result should be different depending on the complexity of the calculations. It is expected that the computing will actually take longer on the cluster in case of simple and short task (as the nodes have to communicate via sockets - that takes time). On the other hand, the more complex task should be much faster using a cluster such as HPC as the computation can be dissipated between many more cores than in case of a single machine.
+ - Make a comparison between parallel computing on a single machine and a cluster of cores - the result should be different depending on the complexity of the calculations. It is expected that the computing will actually take longer on the cluster in case of simple and short task (as the nodes have to communicate via sockets - that takes time). On the other hand, the more complex task should be much faster using a cluster such as HPC as the computation can be dissipated between many more cores than in case of a single machine.
