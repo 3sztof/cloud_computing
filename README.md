@@ -15,6 +15,7 @@
 | [Lecturer's Resources ](https://docs.google.com/document/d/1AkiDFotQ2QgK_lsxTNmoq3mXpJUAl89Ekl6nlrApx_I/) | The resources provided by the lecturer @Mateusz Żbikowski PhD. |
 | [Apache Spark Examples](https://github.com/apache/spark/tree/master/examples/src/main/) | Apache Spark example deployment scripts github repository. |
 | [Berkeley Biostat Cluster](https://statistics.berkeley.edu/computing/parallelR) | A paralel computing environment for R statististics from UC Berkeley. |
+| [Last Year's projects](https://docs.google.com/spreadsheets/d/1IZjWZeUgMh83kY4ErFvVHkMBHWNBPBe6sc-Y_SW9cZI/edit#gid=0) | The projects of last year's (2017/18) students. |
 | [Dillinger.io](dillinger.io) | Online markdown markup editor. |
 
 
@@ -32,9 +33,12 @@
     Where:
      - <ec2-user> depends on the operating system running on the node (for Ubuntu linux, the login and password defaults to ubuntu:ubuntu)
      - <ec2-node-public-dns-adress> is the public dns adress assigned to the node (look it up in the EC2 management console)
- - 
+ - Deployed some simple helloworld / pi approximation scripts on a single EC2 machine (under native python shipped with Ubuntu Linux).
+ - Read the publication on UC Berkeley's Biostat statistical computing cluster software and made an attempt to deploy one at AWS using the instructions provided in the tutorial repository (see: Useful Resources section). The project was abandoned as too ambitious - I have no sufficient R language knowledge, it was decided to stick to Python.
  - Made serveral attepmts, wasting a lot of time in order to deploy a High Performance Computing (HPC) cloud (see the next section for details)
  - After failing to find any help regarding the HPC cloud deployment, a change of approach was needed - it was decided to go with the Apache Spark cloud environment deployed on three AWS EC2 machines: one "master" and two "worker" nodes.
+ - Configured the simple Apache Spark Cluster according to the instructions provided in the "Useful Resources" section of this report.
+ - 
    
    
     
@@ -49,4 +53,6 @@
 
 #### Todo
  - Try again to configure HPC and deploy a Python application there.
+ - Learn R statistics language and deploy the UC Berkeley Biostat cluster on AWS.
  - Make a comparison between parallel computing on a single machine and a cluster of cores - the result should be different depending on the complexity of the calculations. It is expected that the computing will actually take longer on the cluster in case of simple and short task (as the nodes have to communicate via sockets - that takes time). On the other hand, the more complex task should be much faster using a cluster such as HPC as the computation can be dissipated between many more cores than in case of a single machine.
+ 
