@@ -1,9 +1,10 @@
+[![wut](https://www.eyec.ichip.pw.edu.pl/wp-content/uploads/WUT.png)](https://www.meil.pw.edu.pl)
+
 # Warsaw University of Technology
 ### Faculty of Power and Aeronautical Engineering
 ### Cloud computing introductionary course 2018
 > Student: [Krzysztof Wilczynski](https://www.linkedin.com/in/3sztof/)
 > Lecturer: [Mateusz Żbikowski PhD](https://www.itc.pw.edu.pl/Pracownicy/Naukowo-dydaktyczni/Zbikowski-Mateusz)
-
 
 #### Useful resources
 | Resource | Description |
@@ -16,7 +17,7 @@
 | [Apache Spark Examples](https://github.com/apache/spark/tree/master/examples/src/main/) | Apache Spark example deployment scripts github repository. |
 | [Berkeley Biostat Cluster](https://statistics.berkeley.edu/computing/parallelR) | A paralel computing environment for R statististics from UC Berkeley. |
 | [Last Year's projects](https://docs.google.com/spreadsheets/d/1IZjWZeUgMh83kY4ErFvVHkMBHWNBPBe6sc-Y_SW9cZI/edit#gid=0) | The projects of last year's (2017/18) students. |
-| [Dillinger.io](dillinger.io) | Online markdown markup editor. |
+| [Dillinger.io](https://www.dillinger.io) | Online markdown markup editor. |
 
 
 #### Steps taken
